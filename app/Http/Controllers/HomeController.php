@@ -8,6 +8,9 @@ class HomeController extends Controller
 {
     public function index()
 	{
+	   if (!auth()->check()) {
+		  return view('auth.login');
+	   }
 		return view('sections.home');
 	}
 }
